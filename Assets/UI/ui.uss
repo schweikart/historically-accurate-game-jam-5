@@ -1,0 +1,4 @@
+.german-selector {
+    width: 128px;
+    height: 127px;
+}
