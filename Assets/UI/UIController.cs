@@ -1,4 +1,5 @@
 using System;
+using Arminius;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -24,7 +25,9 @@ public class UIController : MonoBehaviour
 
     private VisualElement _currentGermanSelectorDrag = null;
 
-    public GameObject DragGhost;
+    private GameObject _dragGhost;
+    private int _dragGhostOriginalLayer = -1;
+    public LevelData Level;
 
     void Start()
     {
@@ -37,37 +40,45 @@ public class UIController : MonoBehaviour
         _timeSlider.RegisterCallback<ChangeEvent<float>>(OnSliderValueChanged);
 
         _germanSelectorScrollView = rootVisualElement.Q<ScrollView>("GermanSelector");
-        foreach (var germanSelector in _germanSelectorScrollView.contentContainer.Children())
+        foreach (var germane in Level.Germanes)
         {
-            Debug.Log(germanSelector.name);
-            germanSelector.RegisterCallback<MouseDownEvent>(evt => OnGermanSelectorDragStart(evt, germanSelector), TrickleDown.TrickleDown);
-            germanSelector.RegisterCallback<MouseUpEvent>(evt => OnGermanSelectorDragStop(evt, germanSelector));
-            germanSelector.RegisterCallback<MouseMoveEvent>(evt => OnGermanSelectorDragMove(evt, germanSelector));
+            var card = new GermaneCardElement {GermaneData = germane.Germane};
+            card.RegisterCallback<MouseDownEvent>(evt => OnGermanSelectorDragStart(evt, card));
+            card.RegisterCallback<MouseUpEvent>(evt => OnGermanSelectorDragStop(evt, card));
+            card.RegisterCallback<MouseMoveEvent>(evt => OnGermanSelectorDragMove(evt, card));
+            _germanSelectorScrollView.Add(card);
         }
     }
 
-    private void OnGermanSelectorDragStart(MouseDownEvent evt, VisualElement germanSelector)
+    private void OnGermanSelectorDragStart(MouseDownEvent evt, GermaneCardElement germanSelector)
     {
+        evt.target.CaptureMouse();
         _currentGermanSelectorDrag = germanSelector;
-        DragGhost.SetActive(true);
-        Debug.Log("Dragging start: " + germanSelector.name);
+        _dragGhost = Instantiate(germanSelector.GermaneData.FigurePrefab);
+
+        // disable raycasts on ghost
+        _dragGhostOriginalLayer = _dragGhost.layer;
+        _dragGhost.layer = 2;
     }
 
-    private void OnGermanSelectorDragStop(MouseUpEvent evt, VisualElement germanSelector)
+    private void OnGermanSelectorDragStop(MouseUpEvent evt, GermaneCardElement germanSelector)
     {
         _currentGermanSelectorDrag = null;
-        Instantiate(DragGhost);
-        DragGhost.SetActive(false);
-        Debug.Log("Dragging stop: " + germanSelector.name);
+        _dragGhost.layer = _dragGhostOriginalLayer;
+
+        _dragGhost = null;
+        _dragGhostOriginalLayer = -1;
+
+        evt.target.ReleaseMouse();
     }
 
-    private void OnGermanSelectorDragMove(MouseMoveEvent evt, VisualElement germanSelector)
+    private void OnGermanSelectorDragMove(MouseMoveEvent evt, GermaneCardElement germanSelector)
     {
         if (_currentGermanSelectorDrag != null)
         {
             Ray ray = GetComponent<Camera>().ScreenPointToRay(Input.mousePosition);
             Physics.Raycast(ray, out var hit);
-            DragGhost.transform.position = hit.point;
+            _dragGhost.transform.position = hit.point;
             Debug.DrawRay(ray.origin, ray.direction * 10, Color.red);
         }
     }
