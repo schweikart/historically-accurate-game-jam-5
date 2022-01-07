@@ -3,6 +3,12 @@ using Arminius;
 using UnityEngine;
 using UnityEngine.UIElements;
 
+public struct GermaneStockEntry
+{
+    public GermaneData Germane;
+    public int AmountInStock;
+}
+
 [RequireComponent(typeof(UIDocument))]
 public class UIController : MonoBehaviour
 {
@@ -47,7 +53,12 @@ public class UIController : MonoBehaviour
 
         foreach (var germane in Level.Germanes)
         {
-            var card = new GermaneCardElement {GermaneData = germane.Germane};
+            var stock = new GermaneStockEntry()
+            {
+                Germane = germane.Germane,
+                AmountInStock = germane.Amount,
+            };
+            var card = new GermaneCardElement {StockEntry = stock};
             card.RegisterCallback<MouseDownEvent>(evt => OnGermanSelectorDragStart(evt, card));
             card.RegisterCallback<MouseUpEvent>(evt => OnGermanSelectorDragStop(evt, card));
             card.RegisterCallback<MouseMoveEvent>(evt => OnGermanSelectorDragMove(evt, card));
@@ -55,13 +66,21 @@ public class UIController : MonoBehaviour
         }
     }
 
-    private void OnGermanSelectorDragStart(MouseDownEvent evt, GermaneCardElement germanSelector)
+    private void OnGermanSelectorDragStart(MouseDownEvent evt, GermaneCardElement germaneCard)
     {
-        evt.target.CaptureMouse();
-        _currentGermanSelectorDrag = germanSelector;
-        _dragGhost = Instantiate(germanSelector.GermaneData.FigurePrefab);
+        // only create new germane the stock is not empty
+        if (germaneCard.StockEntry.AmountInStock == 0) return;
 
-        // disable raycasts on ghost
+        evt.target.CaptureMouse();
+        _currentGermanSelectorDrag = germaneCard;
+        _dragGhost = Instantiate(germaneCard.StockEntry.Germane.FigurePrefab);
+        germaneCard.StockEntry = new GermaneStockEntry()
+        {
+            AmountInStock = germaneCard.StockEntry.AmountInStock - 1,
+            Germane = germaneCard.StockEntry.Germane,
+        };
+
+        // disable ray casts on ghost
         _dragGhostOriginalLayer = _dragGhost.layer;
         _dragGhost.layer = 2;
     }

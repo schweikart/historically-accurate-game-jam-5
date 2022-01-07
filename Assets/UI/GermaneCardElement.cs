@@ -10,21 +10,15 @@ namespace Arminius
 
         public new class UxmlTraits : VisualElement.UxmlTraits { } //TODO implement germane data as uxml attribute
 
-        private GermaneData _germaneData = null;
+        private GermaneStockEntry _germane;
 
-        public GermaneData GermaneData
+        public GermaneStockEntry StockEntry
         {
-            get => _germaneData;
+            get => _germane;
             set {
-                _germaneData = value;
+                _germane = value;
                 UpdateUi();
             }
-        }
-
-        private void UpdateUi()
-        {
-            _image.sprite = GermaneData.CardSprite;
-            _text.text = GermaneData.TypeName;
         }
 
         private readonly Image _image;
@@ -41,6 +35,12 @@ namespace Arminius
 
             _text = new TextElement {text = "unknown123"};
             Add(_text);
+        }
+
+        public void UpdateUi()
+        {
+            _image.sprite = StockEntry.Germane.CardSprite;
+            _text.text = $"{StockEntry.Germane.TypeName} ({StockEntry.AmountInStock})";
         }
     }
 }
