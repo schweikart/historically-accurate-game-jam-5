@@ -1,7 +1,7 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="ui.uss" />
     <ui:VisualElement name="FullScreenContainer" style="height: 100%; flex-direction: column-reverse;">
-        <ui:VisualElement name="GameControls" style="padding-left: 28px; padding-right: 24px; padding-top: 25px; padding-bottom: 28px; -unity-slice-left: 27; -unity-slice-top: 23; -unity-slice-right: 27; -unity-slice-bottom: 38;">
+        <ui:VisualElement name="GameControls" style="padding-left: 28px; padding-right: 24px; padding-top: 25px; padding-bottom: 28px; -unity-slice-left: 27; -unity-slice-top: 23; -unity-slice-right: 27; -unity-slice-bottom: 38; opacity: 0.9;">
             <ui:ScrollView mode="Horizontal" name="GermanSelector">
                 <Arminius.GermaneCardElement />
                 <Arminius.GermaneCardElement />
