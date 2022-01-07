@@ -3,8 +3,7 @@ using UnityEngine.UIElements;
 
 namespace Arminius
 {
-
-    class GermaneCardElement : VisualElement
+    public class GermaneCardElement : VisualElement
     {
 
         public new class UxmlFactory : UxmlFactory<GermaneCardElement, UxmlTraits> {}
@@ -26,8 +25,6 @@ namespace Arminius
         {
             _image.sprite = GermaneData.CardSprite;
             _text.text = GermaneData.TypeName;
-
-            Debug.Log("update " + _text.text);
         }
 
         private readonly Image _image;
@@ -44,7 +41,6 @@ namespace Arminius
 
             _text = new TextElement {text = "unknown123"};
             Add(_text);
-            Debug.Log("cons");
         }
     }
 }

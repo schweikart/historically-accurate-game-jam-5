@@ -40,6 +40,11 @@ public class UIController : MonoBehaviour
         _timeSlider.RegisterCallback<ChangeEvent<float>>(OnSliderValueChanged);
 
         _germanSelectorScrollView = rootVisualElement.Q<ScrollView>("GermanSelector");
+        while (_germanSelectorScrollView.childCount != 0)
+        {
+            _germanSelectorScrollView.RemoveAt(0);
+        }
+
         foreach (var germane in Level.Germanes)
         {
             var card = new GermaneCardElement {GermaneData = germane.Germane};

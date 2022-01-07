@@ -3,11 +3,9 @@
     <ui:VisualElement name="FullScreenContainer" style="height: 100%; flex-direction: column-reverse;">
         <ui:VisualElement name="GameControls" style="height: auto; background-color: rgba(0, 0, 0, 0.5); padding-left: 5px; padding-right: 5px; padding-top: 5px; padding-bottom: 5px;">
             <ui:ScrollView mode="Horizontal" name="GermanSelector" horizontal-scroller-visibility="Auto" style="flex-direction: column-reverse;">
-                <ui:Button text="German 1" display-tooltip-when-elided="true" name="German1" class="german-selector" />
-                <ui:Button text="German 1" display-tooltip-when-elided="true" name="German2" class="german-selector" />
-                <ui:Button text="German 3" display-tooltip-when-elided="true" name="German3" class="german-selector" />
-                <ui:Button text="German 4" display-tooltip-when-elided="true" name="German4" class="german-selector" />
-                <ui:Button text="German 5" display-tooltip-when-elided="true" name="German5" class="german-selector" />
+                <Arminius.GermaneCardElement />
+                <Arminius.GermaneCardElement />
+                <Arminius.GermaneCardElement />
             </ui:ScrollView>
             <ui:VisualElement name="TimeControl" style="flex-direction: row; flex-grow: 0; margin-top: 10px; margin-bottom: 10px; margin-left: 10px; margin-right: 10px;">
                 <ui:Slider picking-mode="Ignore" label="Time" value="28.8" high-value="100" name="TimeSlider" show-input-field="false" style="flex-direction: row; align-items: stretch; justify-content: space-around; width: 80%;" />
