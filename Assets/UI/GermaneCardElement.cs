@@ -27,10 +27,6 @@ namespace Arminius
         public GermaneCardElement()
         {
             _image = new Image();
-            _image.style.width = 128;
-            _image.style.height = 128;
-            _image.style.marginLeft = 5;
-            _image.style.marginRight = 5;
             Add(_image);
 
             _text = new TextElement {text = "unknown123"};
