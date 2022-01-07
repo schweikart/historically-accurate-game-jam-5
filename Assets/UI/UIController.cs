@@ -21,6 +21,7 @@ public class UIController : MonoBehaviour
         private set
         {
             _playing = value;
+            _timeSlider.SetEnabled(!_playing);
             UpdatePlayButton();
         }
     }
@@ -124,21 +125,17 @@ public class UIController : MonoBehaviour
 
     private void UpdatePlayButton()
     {
-        _playButton.text = (Playing ? "Pause" : "Play") + " (" + _timeSlider.value + ")";
+        _playButton.text = Playing ? "Reset" : "Start";
     }
 
     private void OnPlayButtonClick(ClickEvent evt)
     {
-        if (!Playing && Math.Abs(_timeSlider.value - _timeSlider.highValue) < 0.1)
-        {
-            _timeSlider.value = _timeSlider.lowValue;
-        }
-
         Playing = !Playing;
+        _timeSlider.value = _timeSlider.lowValue;
     }
 
     private void OnSliderValueChanged(ChangeEvent<float> evt)
     {
-        UpdatePlayButton();
+        // set time
     }
 }
