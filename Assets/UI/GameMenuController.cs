@@ -52,6 +52,11 @@ namespace Arminius
             rootVisualElement.Q<Button>("MainMenuButton").RegisterCallback<ClickEvent>(OnMainMenuButtonClick);
 
             _germanSelectorScrollView = rootVisualElement.Q<ScrollView>("GermanSelector");
+            Restock();
+        }
+
+        private void Restock()
+        {
             while (_germanSelectorScrollView.childCount != 0)
             {
                 _germanSelectorScrollView.RemoveAt(0);
@@ -73,7 +78,9 @@ namespace Arminius
         }
 
         private void OnRestartLevelButtonClick(ClickEvent evt)
-        {   
+        {
+            Restock();
+
             foreach (ChangeColorOnDetected o in FindObjectsOfType<ChangeColorOnDetected>())
             {
                 Destroy(o.gameObject);
