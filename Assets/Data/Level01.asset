@@ -16,7 +16,3 @@ MonoBehaviour:
   Germanes:
   - Germane: {fileID: 11400000, guid: 9d12cf6847544f943a96d86a433658f0, type: 2}
     Amount: 5
-  - Germane: {fileID: 11400000, guid: c6a2d213045d9cf40a57250ce367cf43, type: 2}
-    Amount: 2
-  - Germane: {fileID: 11400000, guid: e0de1759142ec0741b96230253d56ce9, type: 2}
-    Amount: 1
