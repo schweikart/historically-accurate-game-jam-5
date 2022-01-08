@@ -5,15 +5,31 @@ GermaneCardElement > Image {
 
 GermaneCardElement {
     -unity-font: url("/Assets/UI/chinese rocks rg.otf");
-    -unity-font-definition: none;
+    -unity-font-definition: url("/Assets/UI/chinese rocks rg.otf");
     font-size: 20px;
     margin: 5px 5px 0 0;
 }
 
-Button {
+#PlayButton {
     border-color: transparent;
     background-color: transparent;
     background-image: url('/Assets/Textures/wooden-ui.png#sign-one');
+}
+
+#MainMenuButton {
+    border-color: transparent;
+    background-color: transparent;
+    background-image: url('/Assets/Textures/wooden-ui.png#mainmenu-square');
+    width: 64px;
+    height: 64px;
+}
+
+#RestartLevelButton {
+    border-color: transparent;
+    background-color: transparent;
+    background-image: url('/Assets/Textures/wooden-ui.png#restart-square');
+    width: 64px;
+    height: 64px;
 }
 
 #unity-tracker {

@@ -20,6 +20,8 @@ public class FieldOfView : MonoBehaviour
     [Range(4,360)]
     public int resolution = 360;
 
+    public int offsetY = 0;
+
 
 
     [HideInInspector]
@@ -175,14 +177,16 @@ public class FieldOfView : MonoBehaviour
     {
         Vector3 dir = DirFromGlobalAngle(globalAngle);
         RaycastHit hit;
+        var offset = new Vector3(0, offsetY, 0);
 
-        if (Physics.Raycast(transform.position, dir, out hit, viewRadius, obstacleMask))
+        if (Physics.Raycast(transform.position + offset, dir, out hit, viewRadius, obstacleMask))
         {
             return new ViewCastInfo(true, hit.point, hit.distance, globalAngle);
         } 
         else
         {
-            return new ViewCastInfo(false, transform.position + dir * viewRadius, viewRadius, globalAngle);
+            return new ViewCastInfo(false, transform.position + dir * viewRadius + offset,
+                Vector3.Distance(transform.position, transform.position + dir * viewRadius + offset), globalAngle);
         }
     }
 
