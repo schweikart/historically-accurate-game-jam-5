@@ -127,7 +127,7 @@ namespace Arminius
             if (_currentGermanSelectorDrag != null)
             {
                 Ray ray = gameController.GetComponent<Camera>().ScreenPointToRay(Input.mousePosition);
-                Physics.Raycast(ray, out var hit);
+                Physics.Raycast(ray, out var hit, Mathf.Infinity, LayerMask.GetMask("ground"));
                 _dragGhost.transform.position = hit.point;
                 Debug.DrawRay(ray.origin, ray.direction * 10, Color.red);
             }
