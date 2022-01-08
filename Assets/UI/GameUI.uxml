@@ -13,7 +13,7 @@
             </ui:VisualElement>
             <ui:VisualElement style="flex-direction: row; flex-grow: 0; align-items: center; justify-content: center;">
                 <ui:Slider value="28.8" high-value="100" name="TimeSlider" style="flex-grow: 1; width: 0; margin-left: 10px; margin-right: 10px;" />
-                <ui:Button text="Start" name="PlayButton" style="-unity-font: url(&apos;/Assets/UI/chinese rocks rg.otf&apos;); font-size: 24px; -unity-font-definition: none; padding-left: 32px; padding-right: 40px; padding-top: 12px; padding-bottom: 12px; color: rgb(0, 0, 0);" />
+                <ui:Button text="Start" name="PlayButton" style="-unity-font: url(&apos;/Assets/UI/chinese rocks rg.otf&apos;); font-size: 24px; -unity-font-definition: none; padding-left: 32px; padding-right: 40px; padding-top: 12px; padding-bottom: 12px; color: rgb(128, 57, 29);" />
             </ui:VisualElement>
         </ui:VisualElement>
     </ui:VisualElement>

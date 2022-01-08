@@ -25,7 +25,7 @@ TextureImporter:
     second: wooden-ui-2_6
   - first:
       213: 4245468553887611461
-    second: wooden-ui-2_7
+    second: sign-both
   - first:
       213: 5491645145179796181
     second: wooden-ui-2_8
@@ -343,7 +343,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wooden-ui-2_7
+      name: sign-both
       rect:
         serializedVersion: 2
         x: 34

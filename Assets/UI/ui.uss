@@ -5,7 +5,7 @@ GermaneCardElement > Image {
 
 GermaneCardElement {
     -unity-font: url("/Assets/UI/chinese rocks rg.otf");
-    -unity-font-definition: none;
+    -unity-font-definition: url("/Assets/UI/chinese rocks rg.otf");
     font-size: 20px;
     margin: 5px 5px 0 0;
 }

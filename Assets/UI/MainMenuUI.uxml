@@ -1,9 +1,11 @@
-<?xml version="1.0" encoding="utf-8"?>
-<engine:UXML
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:engine="UnityEngine.UIElements"
-    xmlns:editor="UnityEditor.UIElements"
-    xsi:noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd"
->
-    
-</engine:UXML>
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="MainMenu.uss" />
+    <ui:VisualElement style="width: 100%; height: 100%; align-items: center; justify-content: center;">
+        <ui:Label text="ARMINIUS" display-tooltip-when-elided="true" style="font-size: 64px; -unity-font-definition: none; -unity-font: url(&apos;/Assets/UI/Runelike.ttf&apos;); color: rgb(0, 0, 0);" />
+        <ui:VisualElement style="margin-left: 48px; margin-right: 48px; margin-top: 48px; margin-bottom: 48px;">
+            <ui:Button text="Play" display-tooltip-when-elided="true" name="PlayButton" />
+            <ui:Button text="Historical Background" display-tooltip-when-elided="true" name="BackgroundButton" />
+            <ui:Button text="Exit" display-tooltip-when-elided="true" name="ExitButton" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
