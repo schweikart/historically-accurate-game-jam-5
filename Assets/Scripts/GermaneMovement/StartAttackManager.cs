@@ -13,12 +13,16 @@ public class StartAttackManager : MonoBehaviour
 
     public void Awake()
     {
-        roman.GetComponent<SplineMovement>().onFinished += delegate { attackStarts(); };
+        if (roman != null)
+        {
+            roman.GetComponent<SplineMovement>().onFinished += delegate { attackStarts(); };
+        }
     }
 
     public void StartAttack()
     {
-        attackStarts();
+        if (attackStarts != null)
+            attackStarts();
     }
 
 }

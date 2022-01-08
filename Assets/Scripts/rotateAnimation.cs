@@ -5,40 +5,35 @@ using UnityEngine;
 public class rotateAnimation : MonoBehaviour
 {
 
-    public float startAngle;
+    public float moveAngle;
 
-    public float endAngle;
+    [Range(0,100)]
+    public int stepsize;
 
-    public float speed;
+    int actualStepSize;
+
+    public float degreesToGo;
 
     public bool started = false;
-
-    Rigidbody rigidBody;
-
 
 
     // Start is called before the first frame update
     void Start()
     {
-        rigidBody = GetComponent<Rigidbody>();
-        rigidBody.MoveRotation(Quaternion.Euler(new Vector3(0, startAngle, 0)));
+        actualStepSize = (moveAngle < 0) ? -stepsize : stepsize;
+        degreesToGo = Mathf.Abs(moveAngle);
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
-        var movement = startAngle < endAngle ? speed : -speed;
-        var eulerAngleVelocity = new Vector3(0, movement, 0);
-        if (started && (Mathf.Abs(startAngle - endAngle) > (Mathf.Abs(startAngle + movement - endAngle))))
-        {
-            Quaternion deltaRotation = Quaternion.Euler(eulerAngleVelocity * Time.fixedDeltaTime);
-            rigidBody.MoveRotation(rigidBody.rotation * deltaRotation);
-        }
-    }
 
-    private void Update()
-    {
-        if (Input.GetButtonDown("F")) start();
+        if (started && degreesToGo > 0)
+        {
+            transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x, transform.rotation.eulerAngles.y + actualStepSize, transform.rotation.eulerAngles.z);
+            degreesToGo -= stepsize;
+        }
+            
     }
 
 

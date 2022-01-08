@@ -14,4 +14,14 @@ public class StopSplineMovementOnAttack : MonoBehaviour
     {
         GetComponent<SplineMovement>().Stop();
     }
+
+    public void OnDestroy()
+    {
+        StartAttackManager manager = FindObjectOfType<StartAttackManager>();
+        if (manager != null)
+        {
+            manager.attackStarts -= delegate { StopMoving(); };
+        }
+
+    }
 }

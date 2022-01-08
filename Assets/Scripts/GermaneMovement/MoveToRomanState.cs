@@ -10,8 +10,11 @@ public class MoveToRomanState : BaseState
 
     public override void StartState()
     {
-        agent = owner.GetComponent<NavMeshAgent>();
-        roman = FindNearestRomanAndGo();
+        if (owner != null)
+        {
+            agent = owner.GetComponent<NavMeshAgent>();
+            roman = FindNearestRomanAndGo();
+        }
     }
 
     private Roman FindNearestRomanAndGo()

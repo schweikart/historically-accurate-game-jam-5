@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.AI;
 using UnityEngine.UIElements;
 
 namespace Arminius
@@ -50,6 +51,7 @@ namespace Arminius
         }
 
         private Button _playButton;
+        private Button _restartButton;
         private Slider _timeSlider;
         private ScrollView _germanSelectorScrollView;
         private Label _modal;
@@ -72,13 +74,19 @@ namespace Arminius
 
             _modal = rootVisualElement.Q<Label>("Modal");
 
-            rootVisualElement.Q<Button>("RestartLevelButton").RegisterCallback<ClickEvent>(OnRestartLevelButtonClick);
+            _restartButton = rootVisualElement.Q<Button>("RestartLevelButton");
+            _restartButton.RegisterCallback<ClickEvent>(OnRestartLevelButtonClick);
             rootVisualElement.Q<Button>("MainMenuButton").RegisterCallback<ClickEvent>(OnMainMenuButtonClick);
 
             _germanSelectorScrollView = rootVisualElement.Q<ScrollView>("GermanSelector");
             Restock();
 
             EditorMode = true;
+        }
+
+        public void Awake()
+        {
+            FindObjectOfType<StartAttackManager>().attackStarts += delegate { OnVictory(); };
         }
 
         private void Restock()
@@ -105,12 +113,15 @@ namespace Arminius
 
         private void OnRestartLevelButtonClick(ClickEvent evt)
         {
+            EditorMode = true;
             Restock();
 
-            foreach (ChangeColorOnDetected o in FindObjectsOfType<ChangeColorOnDetected>())
+            foreach (LooseIfDetected o in FindObjectsOfType<LooseIfDetected>())
             {
                 Destroy(o.gameObject);
             }
+
+            ResetRomans();
         }
 
         private void OnMainMenuButtonClick(ClickEvent evt)
@@ -187,22 +198,66 @@ namespace Arminius
             _playButton.text = Playing ? "Reset" : "Start";
         }
 
+
+        private void OnPlayButtonClick(ClickEvent evt)
+        {
+            Playing = !Playing;
+            _timeSlider.value = _timeSlider.lowValue;
+            if (Playing)
+            {
+                FindObjectOfType<GameLogic.GameController>().StartRomanMove();
+            } else
+            {
+                ResetGermans();
+                ResetRomans();
+            }
+        }
+
+        public Material defaultROman;
+
+        public void ResetRomans()
+        {
+            foreach(Roman roman in FindObjectsOfType<Roman>())
+            {
+                roman.GetComponent<Renderer>().material = defaultROman;
+            }
+        }
+
+        public void ResetGermans()
+        {
+            StartAttackManager attackmanager = FindObjectOfType<StartAttackManager>();
+
+            foreach (ChangeColorOnDetected o in FindObjectsOfType<ChangeColorOnDetected>())
+            {
+                o.GetComponent<StateMachine>().ChangeState(new WaitToAttackState(attackmanager));
+                o.GetComponent<LooseIfDetected>().active = false;
+                o.GetComponent<NavMeshAgent>().isStopped = true;
+            }
+        }
+
+
         private void OnSliderValueChanged(ChangeEvent<float> evt)
         {
             FindObjectOfType<ViewPrediction>().MoveRomans(evt.newValue);
-            if (evt.newValue > 0.95)
+            if (Playing)
             {
-                FindObjectOfType<StartAttackManager>().StartAttack();
+                if (evt.newValue > 0.95)
+                {
+                    FindObjectOfType<StartAttackManager>().StartAttack();
+                }
             }
         }
 
         public void OnVictory()
         {
             ShowModal("Victory!");
+            _playButton.SetEnabled(false);
+            _restartButton.SetEnabled(false);
         }
 
         public void OnDefeat()
         {
+            EditorMode = true;
             ShowModal("Defeat");
         }
 

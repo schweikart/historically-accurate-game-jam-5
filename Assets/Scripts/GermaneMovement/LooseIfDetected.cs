@@ -9,7 +9,7 @@ public class LooseIfDetected : MonoBehaviour, IDetected
         FindObjectOfType<GameLogic.GameController>().onStartRomanMove += delegate { active = true; };
     }
 
-    private bool active = false;
+    public bool active = false;
 
     public void Detected()
     {
