@@ -1,7 +1,9 @@
+using Arminius;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 namespace GameLogic { 
@@ -9,10 +11,7 @@ namespace GameLogic {
     {
         public event Action onStartRomanMove;
 
-        public void Awake()
-        {
-            //FindObjectOfType<Button>().onClick.AddListener(delegate { StartRomanMove(); });
-        }
+        private GameMenuController controller;
 
         public void StartRomanMove()
         {
@@ -22,6 +21,14 @@ namespace GameLogic {
         public void GermanDetected()
         {
             Debug.Log("loose");
+        }
+
+        public void Update()
+        {
+            if (GlobalRomanManager.Instance.Romans.Count == 0)
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            }
         }
     }
 }

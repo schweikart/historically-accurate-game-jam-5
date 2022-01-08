@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.AI;
 using UnityEngine.UIElements;
 
 namespace Arminius
@@ -181,12 +182,48 @@ namespace Arminius
             _playButton.text = Playing ? "Reset" : "Start";
         }
 
+
+        private void OnPlayButtonClick(ClickEvent evt)
+        {
+            Playing = !Playing;
+            _timeSlider.value = _timeSlider.lowValue;
+            if (Playing)
+            {
+                FindObjectOfType<GameLogic.GameController>().StartRomanMove();
+            } else
+            {
+                StartAttackManager attackmanager = FindObjectOfType<StartAttackManager>();
+
+                foreach (ChangeColorOnDetected o in FindObjectsOfType<ChangeColorOnDetected>())
+                {
+                    o.GetComponent<StateMachine>().ChangeState(new WaitToAttackState(attackmanager));
+                    o.GetComponent<LooseIfDetected>().active = false;
+                    o.GetComponent<NavMeshAgent>().isStopped = true;
+                }
+                ResetRomans();
+            }
+        }
+
+        public Material defaultROman;
+
+        private void ResetRomans()
+        {
+            foreach(Roman roman in FindObjectsOfType<Roman>())
+            {
+                roman.GetComponent<Renderer>().material = defaultROman;
+            }
+        }
+
+
         private void OnSliderValueChanged(ChangeEvent<float> evt)
         {
             FindObjectOfType<ViewPrediction>().MoveRomans(evt.newValue);
-            if (evt.newValue > 0.95)
+            if (Playing)
             {
-                FindObjectOfType<StartAttackManager>().StartAttack();
+                if (evt.newValue > 0.95)
+                {
+                    FindObjectOfType<StartAttackManager>().StartAttack();
+                }
             }
         }
 

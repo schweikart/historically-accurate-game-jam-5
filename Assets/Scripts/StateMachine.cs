@@ -16,12 +16,18 @@ public class StateMachine : MonoBehaviour
 
     private void Update()
     {
-        state.UpdateState();
+        if (state != null)
+        {
+            state.UpdateState();
+        }
     }
 
     private void FixedUpdate()
     {
-        state.FixedUpdateState();
+        if (state != null)
+        {
+            state.FixedUpdateState();
+        }
     }
 
     public void ChangeState(BaseState newState)

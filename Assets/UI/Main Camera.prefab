@@ -61,8 +61,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameController: {fileID: 5522698919012412899}
-  Speed: 10
+  Speed: 0.1
   Level: {fileID: 11400000, guid: 4efb7e6a121ff554a97eee6b9e409648, type: 2}
+  defaultROman: {fileID: 2100000, guid: c1d789d64ce646f4ab37a0f734767d3a, type: 2}
 --- !u!1 &5522698919012412900
 GameObject:
   m_ObjectHideFlags: 0
