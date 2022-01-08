@@ -46,6 +46,9 @@ public class UIController : MonoBehaviour
         _timeSlider = rootVisualElement.Q<Slider>("TimeSlider");
         _timeSlider.RegisterCallback<ChangeEvent<float>>(OnSliderValueChanged);
 
+        rootVisualElement.Q<Button>("RestartLevelButton").RegisterCallback<ClickEvent>(OnRestartLevelButtonClick);
+        rootVisualElement.Q<Button>("MainMenuButton").RegisterCallback<ClickEvent>(OnMainMenuButtonClick);
+
         _germanSelectorScrollView = rootVisualElement.Q<ScrollView>("GermanSelector");
         while (_germanSelectorScrollView.childCount != 0)
         {
@@ -65,6 +68,16 @@ public class UIController : MonoBehaviour
             card.RegisterCallback<MouseMoveEvent>(evt => OnGermanSelectorDragMove(evt, card));
             _germanSelectorScrollView.Add(card);
         }
+    }
+
+    private void OnRestartLevelButtonClick(ClickEvent evt)
+    {
+        Debug.Log("Restart Level");
+    }
+
+    private void OnMainMenuButtonClick(ClickEvent evt)
+    {
+        Debug.Log("Main Menu");
     }
 
     private void OnGermanSelectorDragStart(MouseDownEvent evt, GermaneCardElement germaneCard)
