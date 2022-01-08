@@ -254,10 +254,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16cd6cb3fb5f7da46becbb3e1483b185, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startAngle: -147.697
-  endAngle: -88.6
-  speed: 50
+  moveAngle: 60
+  stepsize: 2
+  degreesToGo: 0
   started: 0
+--- !u!54 &764949004
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 764948999}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 14
+  m_CollisionDetection: 0
 --- !u!1001 &874801382
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -328,7 +344,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9187732681016648900, guid: 8d36ca8970ef16948be1229cf52a31cb, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 9187732681016648900, guid: 8d36ca8970ef16948be1229cf52a31cb, type: 3}
       propertyPath: m_LocalScale.x
@@ -441,6 +457,67 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 49dfe6fd436636c4aab54c3ceeff32ab, type: 3}
+--- !u!1 &1073797223
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1073797225}
+  - component: {fileID: 1073797224}
+  m_Layer: 0
+  m_Name: penis
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1073797224
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1073797223}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AgentTypeID: 0
+  m_CollectObjects: 0
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_UseGeometry: 0
+  m_DefaultArea: 0
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 0
+  m_TileSize: 256
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.16666667
+  m_MinRegionArea: 2
+  m_NavMeshData: {fileID: 23800000, guid: 0f19901e8009cce4aa41e46dff262f04, type: 2}
+  m_BuildHeightMesh: 0
+--- !u!4 &1073797225
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1073797223}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.75542617, y: 0.9565732, z: -7.864767}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 17
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1139450621
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -946,10 +1023,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16cd6cb3fb5f7da46becbb3e1483b185, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startAngle: 154.862
-  endAngle: 71.88
-  speed: 70
+  moveAngle: -75
+  stepsize: 2
+  degreesToGo: 0
   started: 0
+--- !u!54 &1792002843
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1792002840}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 14
+  m_CollisionDetection: 0
 --- !u!1001 &1925743032
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1130,7 +1223,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8537995401432713946, guid: 1b4f343e543c728458de79c6398bc92a, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8537995401432713946, guid: 1b4f343e543c728458de79c6398bc92a, type: 3}
       propertyPath: m_LocalScale.x
