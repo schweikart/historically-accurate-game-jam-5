@@ -71,6 +71,7 @@ public class FieldOfView : MonoBehaviour
         foreach (Transform visibleTarget in visibleTargets)
         {
             //call to target
+            visibleTarget.GetComponent<IDetected>().Detected();
         }
    
     }
