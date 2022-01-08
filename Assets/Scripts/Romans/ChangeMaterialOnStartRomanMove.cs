@@ -9,6 +9,6 @@ public class ChangeMaterialOnStartRomanMove : MonoBehaviour
 
     public void Awake()
     {
-        FindObjectOfType<GameController>().onStartRomanMove += delegate { GetComponent<Renderer>().material = newMaterial;  };
+        FindObjectOfType<GameLogic.GameController>().onStartRomanMove += delegate { GetComponent<Renderer>().material = newMaterial;  };
     }
 }

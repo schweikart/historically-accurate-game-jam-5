@@ -4,22 +4,25 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class GameController : MonoBehaviour
-{
-    public event Action onStartRomanMove;
-
-    public void Awake()
+namespace GameLogic { 
+    public class GameController : MonoBehaviour
     {
-        //FindObjectOfType<Button>().onClick.AddListener(delegate { StartRomanMove(); });
-    }
+        public event Action onStartRomanMove;
 
-    public void StartRomanMove()
-    {
-        onStartRomanMove?.Invoke();
-    }
+        public void Awake()
+        {
+            //FindObjectOfType<Button>().onClick.AddListener(delegate { StartRomanMove(); });
+        }
 
-    public void GermanDetected()
-    {
-        Debug.Log("loose");
+        public void StartRomanMove()
+        {
+            onStartRomanMove?.Invoke();
+        }
+
+        public void GermanDetected()
+        {
+            Debug.Log("loose");
+        }
     }
 }
+

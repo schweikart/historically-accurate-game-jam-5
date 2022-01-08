@@ -6,7 +6,7 @@ public class LooseIfDetected : MonoBehaviour, IDetected
 {
     public void Awake()
     {
-        FindObjectOfType<GameController>().onStartRomanMove += delegate { active = true; };
+        FindObjectOfType<GameLogic.GameController>().onStartRomanMove += delegate { active = true; };
     }
 
     private bool active = false;
@@ -15,7 +15,7 @@ public class LooseIfDetected : MonoBehaviour, IDetected
     {
         if (active == true)
         {
-            FindObjectOfType<GameController>().GermanDetected();
+            FindObjectOfType<GameLogic.GameController>().GermanDetected();
         }
     }
 }

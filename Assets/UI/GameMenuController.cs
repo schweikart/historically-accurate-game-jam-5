@@ -147,11 +147,14 @@ namespace Arminius
         {
             Playing = !Playing;
             _timeSlider.value = _timeSlider.lowValue;
+            FindObjectOfType<GameLogic.GameController>().StartRomanMove();
         }
+
+        private ViewPrediction prediction;
 
         private void OnSliderValueChanged(ChangeEvent<float> evt)
         {
-            // set time
+            prediction.MoveRomans(evt.newValue);
         }
     }
 

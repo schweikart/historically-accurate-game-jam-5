@@ -7,15 +7,7 @@ public class ViewPrediction : MonoBehaviour
 
     public void Awake()
     {
-        FindObjectOfType<GameController>().onStartRomanMove += delegate { this.enabled = false; };
-    }
-
-    public float prediction;
-
-    public void Update()
-    {
-        //Get slider 
-        MoveRomans(prediction);
+        FindObjectOfType<GameLogic.GameController>().onStartRomanMove += delegate { this.enabled = false; };
     }
 
     public void MoveRomans(float amount)
