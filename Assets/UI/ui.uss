@@ -39,3 +39,7 @@ GermaneCardElement {
 #GameControls {
     background-image: url('/Assets/Textures/wooden-ui.png#panel');
 }
+
+.hidden {
+    display: none;
+}
