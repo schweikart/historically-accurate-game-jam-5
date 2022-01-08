@@ -17,6 +17,9 @@ public class FieldOfView : MonoBehaviour
     public Material visibleTargetMaterial;
     public Material notVisibleTargetMaterial;
 
+    [Range(4,360)]
+    public int resolution = 360;
+
 
 
     [HideInInspector]
@@ -93,11 +96,10 @@ public class FieldOfView : MonoBehaviour
     {
         var viewPoints = new List<Vector3>();
         var oldViewCast = new ViewCastInfo();
-        var stepCount = 360;
 
-        for (int i = 0; i <= stepCount; i++)
+        for (int i = 0; i <= resolution; i++)
         {
-            var newViewCast = ViewCast(i);
+            var newViewCast = ViewCast((i*360)/resolution);
 
             if (i > 0)
             {
