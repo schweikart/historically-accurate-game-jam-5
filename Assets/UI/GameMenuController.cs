@@ -150,11 +150,9 @@ namespace Arminius
             FindObjectOfType<GameLogic.GameController>().StartRomanMove();
         }
 
-        private ViewPrediction prediction;
-
         private void OnSliderValueChanged(ChangeEvent<float> evt)
         {
-            prediction.MoveRomans(evt.newValue);
+            FindObjectOfType<ViewPrediction>().MoveRomans(evt.newValue);
         }
     }
 
