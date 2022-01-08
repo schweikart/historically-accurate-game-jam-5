@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 
 namespace Arminius
@@ -13,8 +14,6 @@ namespace Arminius
 
     public class GameMenuController : MonoBehaviour
     {
-        public GameController gameController;
-
         private bool _editorMode = true;
         public bool EditorMode
         {
@@ -126,8 +125,7 @@ namespace Arminius
 
         private void OnMainMenuButtonClick(ClickEvent evt)
         {
-            //gameController.OpenMainMenu();
-            OnVictory();
+            SceneManager.LoadScene("mainMenu");
         }
 
         private void OnGermanSelectorDragStart(MouseDownEvent evt, GermaneCardElement germaneCard)
@@ -170,7 +168,7 @@ namespace Arminius
         {
             if (EditorMode && _currentGermanSelectorDrag != null)
             {
-                Ray ray = gameController.GetComponent<Camera>().ScreenPointToRay(Input.mousePosition);
+                Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
                 Physics.Raycast(ray, out var hit, Mathf.Infinity, LayerMask.GetMask("ground"));
                 _dragGhost.transform.position = hit.point;
                 Debug.DrawRay(ray.origin, ray.direction * 10, Color.red);
@@ -198,20 +196,6 @@ namespace Arminius
             _playButton.text = Playing ? "Reset" : "Start";
         }
 
-
-        private void OnPlayButtonClick(ClickEvent evt)
-        {
-            Playing = !Playing;
-            _timeSlider.value = _timeSlider.lowValue;
-            if (Playing)
-            {
-                FindObjectOfType<GameLogic.GameController>().StartRomanMove();
-            } else
-            {
-                ResetGermans();
-                ResetRomans();
-            }
-        }
 
         public Material defaultROman;
 

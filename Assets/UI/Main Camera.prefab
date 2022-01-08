@@ -60,7 +60,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb26a44bbf209134aba5045e877651ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameController: {fileID: 5522698919012412899}
   Speed: 0.1
   Level: {fileID: 11400000, guid: 4efb7e6a121ff554a97eee6b9e409648, type: 2}
   defaultROman: {fileID: 2100000, guid: c1d789d64ce646f4ab37a0f734767d3a, type: 2}
@@ -76,7 +75,6 @@ GameObject:
   - component: {fileID: 5522698919012412902}
   - component: {fileID: 5522698919012412903}
   - component: {fileID: 5522698919012412896}
-  - component: {fileID: 5522698919012412899}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -163,20 +161,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afe6c4600f907e64ca01409d01326a60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &5522698919012412899
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5522698919012412900}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d466383b327ac92409b5d78635d2e4eb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mainMenuController: {fileID: 5522698920252736533}
-  gameMenuController: {fileID: 5522698919005791122}
 --- !u!1 &5522698920252736744
 GameObject:
   m_ObjectHideFlags: 0
@@ -237,4 +221,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00eafb236acb7df46b30cf2562fadfa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameController: {fileID: 5522698919012412899}
