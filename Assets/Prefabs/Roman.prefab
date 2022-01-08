@@ -242,7 +242,7 @@ MonoBehaviour:
   edgeResolveIterations: 4
   targetMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 128
   obstacleMask:
     serializedVersion: 2
     m_Bits: 64
