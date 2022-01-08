@@ -477,19 +477,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   viewRadius: 6.91
-  edgeDistanceThreshold: 0.5
-  edgeResolveIterations: 12
   targetMask:
     serializedVersion: 2
     m_Bits: 64
   obstacleMask:
     serializedVersion: 2
     m_Bits: 128
+  visibleTargets: []
+  meshResolution: 1
   viewMeshFilter: {fileID: 1152988143}
+  edgeResolveIterations: 4
+  edgeDistanceThreshold: 0.5
   visibleTargetMaterial: {fileID: 2100000, guid: 300c4a093abd07c4bb36820ff1e11abc, type: 2}
   notVisibleTargetMaterial: {fileID: 2100000, guid: f7e448938585d8d42b444861879c6560, type: 2}
-  resolution: 220
-  visibleTargets: []
 --- !u!114 &899775262
 MonoBehaviour:
   m_ObjectHideFlags: 0
