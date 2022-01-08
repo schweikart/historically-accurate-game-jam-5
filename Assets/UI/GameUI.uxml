@@ -16,5 +16,8 @@
                 <ui:Button text="Start" name="PlayButton" style="-unity-font: url(&apos;/Assets/UI/chinese rocks rg.otf&apos;); font-size: 24px; -unity-font-definition: none; padding-left: 32px; padding-right: 40px; padding-top: 12px; padding-bottom: 12px; color: rgb(128, 57, 29);" />
             </ui:VisualElement>
         </ui:VisualElement>
+        <ui:VisualElement style="align-items: center; justify-content: space-around; margin-top: 100px; margin-bottom: 100px;">
+            <ui:Label text="Victory!" display-tooltip-when-elided="true" name="Modal" style="font-size: 64px; -unity-font-definition: none; -unity-font: url(&apos;/Assets/UI/Runelike.ttf&apos;); color: rgb(0, 0, 0); text-shadow: 3px 3px 2px rgba(0, 0, 0, 0.25);" />
+        </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>

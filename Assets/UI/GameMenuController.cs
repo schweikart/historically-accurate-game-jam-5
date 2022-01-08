@@ -14,6 +14,27 @@ namespace Arminius
     {
         public GameController gameController;
 
+        private bool _editorMode = true;
+        public bool EditorMode
+        {
+            get => _editorMode;
+            set
+            {
+                _editorMode = value;
+                Playing = !_editorMode;
+
+                if (_editorMode)
+                {
+                    HideModal();
+                    _timeSlider.value = _timeSlider.lowValue;
+                }
+                else
+                {
+                    FindObjectOfType<GameLogic.GameController>().StartRomanMove();
+                }
+            }
+        }
+
         public float Speed = 10;
 
         private bool _playing = false;
@@ -31,6 +52,7 @@ namespace Arminius
         private Button _playButton;
         private Slider _timeSlider;
         private ScrollView _germanSelectorScrollView;
+        private Label _modal;
 
         private VisualElement _currentGermanSelectorDrag = null;
 
@@ -43,16 +65,20 @@ namespace Arminius
             var rootVisualElement = GetComponent<UIDocument>().rootVisualElement;
 
             _playButton = rootVisualElement.Q<Button>("PlayButton");
-            _playButton.RegisterCallback<ClickEvent>(OnPlayButtonClick);
+            _playButton.RegisterCallback<ClickEvent>(evt => EditorMode = !EditorMode);
 
             _timeSlider = rootVisualElement.Q<Slider>("TimeSlider");
             _timeSlider.RegisterCallback<ChangeEvent<float>>(OnSliderValueChanged);
+
+            _modal = rootVisualElement.Q<Label>("Modal");
 
             rootVisualElement.Q<Button>("RestartLevelButton").RegisterCallback<ClickEvent>(OnRestartLevelButtonClick);
             rootVisualElement.Q<Button>("MainMenuButton").RegisterCallback<ClickEvent>(OnMainMenuButtonClick);
 
             _germanSelectorScrollView = rootVisualElement.Q<ScrollView>("GermanSelector");
             Restock();
+
+            EditorMode = true;
         }
 
         private void Restock()
@@ -89,7 +115,8 @@ namespace Arminius
 
         private void OnMainMenuButtonClick(ClickEvent evt)
         {
-            gameController.OpenMainMenu();
+            //gameController.OpenMainMenu();
+            OnVictory();
         }
 
         private void OnGermanSelectorDragStart(MouseDownEvent evt, GermaneCardElement germaneCard)
@@ -142,6 +169,7 @@ namespace Arminius
                 {
                     newTime = _timeSlider.highValue;
                     Playing = false;
+                    // at this point, the fight is probably still running
                 }
 
                 _timeSlider.value = newTime;
@@ -153,13 +181,6 @@ namespace Arminius
             _playButton.text = Playing ? "Reset" : "Start";
         }
 
-        private void OnPlayButtonClick(ClickEvent evt)
-        {
-            Playing = !Playing;
-            _timeSlider.value = _timeSlider.lowValue;
-            FindObjectOfType<GameLogic.GameController>().StartRomanMove();
-        }
-
         private void OnSliderValueChanged(ChangeEvent<float> evt)
         {
             FindObjectOfType<ViewPrediction>().MoveRomans(evt.newValue);
@@ -167,6 +188,27 @@ namespace Arminius
             {
                 FindObjectOfType<StartAttackManager>().StartAttack();
             }
+        }
+
+        public void OnVictory()
+        {
+            ShowModal("Victory!");
+        }
+
+        public void OnDefeat()
+        {
+            ShowModal("Defeat");
+        }
+
+        private void ShowModal(string text)
+        {
+            _modal.text = text;
+            _modal.RemoveFromClassList("hidden");
+        }
+
+        private void HideModal()
+        {
+            _modal.AddToClassList("hidden");
         }
     }
 
