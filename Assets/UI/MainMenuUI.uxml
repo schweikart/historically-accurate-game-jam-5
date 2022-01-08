@@ -1,11 +1,18 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="MainMenu.uss" />
-    <ui:VisualElement style="width: 100%; height: 100%; align-items: center; justify-content: center;">
-        <ui:Label text="ARMINIUS" display-tooltip-when-elided="true" style="font-size: 64px; -unity-font-definition: none; -unity-font: url(&apos;/Assets/UI/Runelike.ttf&apos;); color: rgb(0, 0, 0);" />
-        <ui:VisualElement style="margin-left: 48px; margin-right: 48px; margin-top: 48px; margin-bottom: 48px;">
-            <ui:Button text="Play" display-tooltip-when-elided="true" name="PlayButton" />
-            <ui:Button text="Historical Background" display-tooltip-when-elided="true" name="BackgroundButton" />
-            <ui:Button text="Exit" display-tooltip-when-elided="true" name="ExitButton" />
+    <ui:VisualElement name="RootContainer" style="flex-direction: row; align-items: center; justify-content: center; width: 100%; height: 100%;">
+        <ui:VisualElement name="Menu" style="width: 100%; height: 100%; align-items: center; justify-content: center;">
+            <ui:Label text="ARMINIUS" display-tooltip-when-elided="true" style="font-size: 64px; -unity-font-definition: none; -unity-font: url(&apos;/Assets/UI/Runelike.ttf&apos;); color: rgb(0, 0, 0);" />
+            <ui:VisualElement style="margin-left: 48px; margin-right: 48px; margin-top: 48px; margin-bottom: 48px;">
+                <ui:Button text="Play" display-tooltip-when-elided="true" name="PlayButton" />
+                <ui:Button text="Historical Background" display-tooltip-when-elided="true" name="BackgroundButton" />
+                <ui:Button text="Exit" display-tooltip-when-elided="true" name="ExitButton" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="BackgroundTextContainer">
+            <ui:Label text="The Battle of the Teutoburg Forest took place in 9 AD, when an alliance of Germanic peoples ambushed Roman legions , led by Publius Quinctilius Varus. The alliance was led by Arminius, a Germanic officer of Varus&apos;s auxilia. Arminius had acquired Roman citizenship and had received a Roman military education, which enabled him to deceive the Roman commander methodically and anticipate the Roman army&apos;s tactical responses." display-tooltip-when-elided="true" style="white-space: normal;" />
+            <ui:Button text="Learn More" display-tooltip-when-elided="true" name="LearnMoreButton" />
         </ui:VisualElement>
     </ui:VisualElement>
+    <ui:Label text="made in 2022 by Jasmin Azarfar, Janis Peters, Max Schweikart and Philipp Seidel" display-tooltip-when-elided="true" style="white-space: nowrap; -unity-text-align: upper-right; -unity-font: url(&apos;/Assets/UI/chinese rocks rg.otf&apos;); -unity-font-definition: none;" />
 </ui:UXML>
