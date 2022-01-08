@@ -15,6 +15,8 @@ GameObject:
   - component: {fileID: 4021120444818984238}
   - component: {fileID: 4021120444818984233}
   - component: {fileID: 8377015064625051284}
+  - component: {fileID: 6670612255437789063}
+  - component: {fileID: -8270124461836847091}
   m_Layer: 0
   m_Name: German
   m_TagString: Untagged
@@ -145,3 +147,29 @@ NavMeshAgent:
   m_BaseOffset: 1
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &6670612255437789063
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4021120444818984404}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d792d6319e78d74cb7565fc8b4cb1bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  detectedMaterial: {fileID: 2100000, guid: 940e008d7db6f2248957b05a26e18de9, type: 2}
+  notDetectedMaterial: {fileID: 2100000, guid: 300c4a093abd07c4bb36820ff1e11abc, type: 2}
+--- !u!114 &-8270124461836847091
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4021120444818984404}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20d3895bcc052af4eac06beb7c864703, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

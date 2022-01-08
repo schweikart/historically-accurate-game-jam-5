@@ -25,13 +25,14 @@ public class SplineMovement : MonoBehaviour
     public float Progress { get { return progress; } }
     private bool goingForward = true;
     private float splineLength;
+    public float SplineLength { get { return splineLength; } }
 
     public void Awake()
     {
         splineLength = spline.GetSplineLength();
     }
 
-    private bool stopped = false;
+    public bool stopped = false;
     public void Stop()
     {
         stopped = true;
@@ -85,24 +86,30 @@ public class SplineMovement : MonoBehaviour
                     }
                 }
 
-                Vector3 position = spline.GetPoint(progress);
-                Vector3 direction = spline.GetDirection(progress);
-                if (offset == 0)
-                {
-                    transform.localPosition = position;
-                } else
-                {
-                    float degrees = Mathf.Atan2(direction.z, direction.x);
-                    degrees = degrees - (float)1 / 2 * Mathf.PI;
-
-                    transform.localPosition = new Vector3(position.x + ((float)Mathf.Cos(degrees) * offset), position.y, position.z + (float)(Mathf.Sin(degrees) * offset));
-                }
-
-                if (lookForward)
-                {
-                    transform.LookAt(position + direction);
-                }
+                MoveTo(progress);
             }
+        }
+    }
+
+    public void MoveTo(float amount)
+    {
+        Vector3 position = spline.GetPoint(amount);
+        Vector3 direction = spline.GetDirection(amount);
+        if (offset == 0)
+        {
+            transform.localPosition = position;
+        }
+        else
+        {
+            float degrees = Mathf.Atan2(direction.z, direction.x);
+            degrees = degrees - (float)1 / 2 * Mathf.PI;
+
+            transform.localPosition = new Vector3(position.x + ((float)Mathf.Cos(degrees) * offset), position.y, position.z + (float)(Mathf.Sin(degrees) * offset));
+        }
+
+        if (lookForward)
+        {
+            transform.LookAt(position + direction);
         }
     }
 }
