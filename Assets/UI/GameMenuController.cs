@@ -73,8 +73,11 @@ namespace Arminius
         }
 
         private void OnRestartLevelButtonClick(ClickEvent evt)
-        {
-            Debug.Log("Restart Level");
+        {   
+            foreach (ChangeColorOnDetected o in FindObjectsOfType<ChangeColorOnDetected>())
+            {
+                Destroy(o.gameObject);
+            }
         }
 
         private void OnMainMenuButtonClick(ClickEvent evt)
