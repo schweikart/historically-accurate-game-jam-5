@@ -73,8 +73,11 @@ namespace Arminius
         }
 
         private void OnRestartLevelButtonClick(ClickEvent evt)
-        {
-            Debug.Log("Restart Level");
+        {   
+            foreach (ChangeColorOnDetected o in FindObjectsOfType<ChangeColorOnDetected>())
+            {
+                Destroy(o.gameObject);
+            }
         }
 
         private void OnMainMenuButtonClick(ClickEvent evt)
@@ -153,6 +156,10 @@ namespace Arminius
         private void OnSliderValueChanged(ChangeEvent<float> evt)
         {
             FindObjectOfType<ViewPrediction>().MoveRomans(evt.newValue);
+            if (evt.newValue > 95)
+            {
+                FindObjectOfType<StartAttackManager>().StartAttack();
+            }
         }
     }
 
