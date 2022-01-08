@@ -18,17 +18,34 @@ namespace GameLogic {
             onStartRomanMove?.Invoke();
         }
 
+        private bool attacking = false;
+
+        public void Awake()
+        {
+            FindObjectOfType<StartAttackManager>().attackStarts += delegate { attacking = true; };
+        }
+
         public void GermanDetected()
         {
-            Debug.Log("loose");
+            if (!attacking)
+            FindObjectOfType<GameMenuController>().OnDefeat();
+            StartCoroutine(WaitS());
         }
+
+        public IEnumerator WaitS()
+        {
+            yield return new WaitForSeconds(3);
+            FindObjectOfType<GameMenuController>().ResetGermans();
+            FindObjectOfType<GameMenuController>().ResetRomans();
+        }
+
 
         public void Update()
         {
-            if (GlobalRomanManager.Instance.Romans.Count == 0)
-            {
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-            }
+                if (GlobalRomanManager.Instance.Romans.Count == 0)
+                {
+                    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+                }
         }
     }
 }

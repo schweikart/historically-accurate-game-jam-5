@@ -82,6 +82,11 @@ namespace Arminius
             EditorMode = true;
         }
 
+        public void Awake()
+        {
+            FindObjectOfType<StartAttackManager>().attackStarts += delegate { OnVictory(); };
+        }
+
         private void Restock()
         {
             while (_germanSelectorScrollView.childCount != 0)
@@ -106,12 +111,15 @@ namespace Arminius
 
         private void OnRestartLevelButtonClick(ClickEvent evt)
         {
+            EditorMode = true;
             Restock();
 
-            foreach (ChangeColorOnDetected o in FindObjectsOfType<ChangeColorOnDetected>())
+            foreach (LooseIfDetected o in FindObjectsOfType<LooseIfDetected>())
             {
                 Destroy(o.gameObject);
             }
+
+            ResetRomans();
         }
 
         private void OnMainMenuButtonClick(ClickEvent evt)
@@ -198,25 +206,30 @@ namespace Arminius
                 FindObjectOfType<GameLogic.GameController>().StartRomanMove();
             } else
             {
-                StartAttackManager attackmanager = FindObjectOfType<StartAttackManager>();
-
-                foreach (ChangeColorOnDetected o in FindObjectsOfType<ChangeColorOnDetected>())
-                {
-                    o.GetComponent<StateMachine>().ChangeState(new WaitToAttackState(attackmanager));
-                    o.GetComponent<LooseIfDetected>().active = false;
-                    o.GetComponent<NavMeshAgent>().isStopped = true;
-                }
+                ResetGermans();
                 ResetRomans();
             }
         }
 
         public Material defaultROman;
 
-        private void ResetRomans()
+        public void ResetRomans()
         {
             foreach(Roman roman in FindObjectsOfType<Roman>())
             {
                 roman.GetComponent<Renderer>().material = defaultROman;
+            }
+        }
+
+        public void ResetGermans()
+        {
+            StartAttackManager attackmanager = FindObjectOfType<StartAttackManager>();
+
+            foreach (ChangeColorOnDetected o in FindObjectsOfType<ChangeColorOnDetected>())
+            {
+                o.GetComponent<StateMachine>().ChangeState(new WaitToAttackState(attackmanager));
+                o.GetComponent<LooseIfDetected>().active = false;
+                o.GetComponent<NavMeshAgent>().isStopped = true;
             }
         }
 
@@ -236,10 +249,12 @@ namespace Arminius
         public void OnVictory()
         {
             ShowModal("Victory!");
+            _playButton.SetEnabled(false);
         }
 
         public void OnDefeat()
         {
+            EditorMode = true;
             ShowModal("Defeat");
         }
 
