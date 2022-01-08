@@ -1,0 +1,948 @@
+fileFormatVersion: 2
+guid: 4ddf8c7160a7afe42976238a3cea7f5b
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -1373826078532324253
+    second: wooden-ui-2_0
+  - first:
+      213: 6915622219956585594
+    second: panel
+  - first:
+      213: -2519038258853023841
+    second: wooden-ui-2_2
+  - first:
+      213: 7131548123235670081
+    second: wooden-ui-2_3
+  - first:
+      213: 7676662290373706238
+    second: wooden-ui-2_4
+  - first:
+      213: -4101959367156528450
+    second: wooden-ui-2_5
+  - first:
+      213: -4301720610491849282
+    second: wooden-ui-2_6
+  - first:
+      213: 4245468553887611461
+    second: wooden-ui-2_7
+  - first:
+      213: 5491645145179796181
+    second: wooden-ui-2_8
+  - first:
+      213: 2060190444995400435
+    second: sign-one
+  - first:
+      213: 8652631102503247117
+    second: wooden-ui-2_10
+  - first:
+      213: -1292526280026200523
+    second: wooden-ui-2_11
+  - first:
+      213: -6018212907082544823
+    second: wooden-ui-2_12
+  - first:
+      213: -8137944871859404710
+    second: wooden-ui-2_13
+  - first:
+      213: 7246232546571256721
+    second: wooden-ui-2_14
+  - first:
+      213: -7719906325749331400
+    second: wooden-ui-2_15
+  - first:
+      213: 1358612602981645945
+    second: wooden-ui-2_16
+  - first:
+      213: 7518317885039093493
+    second: wooden-ui-2_17
+  - first:
+      213: 6556414436855404987
+    second: wooden-ui-2_18
+  - first:
+      213: 1276097861009409651
+    second: wooden-ui-2_19
+  - first:
+      213: 399123723956300070
+    second: wooden-ui-2_20
+  - first:
+      213: -2860396326807941000
+    second: wooden-ui-2_21
+  - first:
+      213: -1278915336337546647
+    second: wooden-ui-2_22
+  - first:
+      213: -5659644904466012373
+    second: wooden-ui-2_23
+  - first:
+      213: -3557178164329680626
+    second: wooden-ui-2_24
+  - first:
+      213: -3541628500035486379
+    second: wooden-ui-2_25
+  - first:
+      213: 6624954069211968220
+    second: wooden-ui-2_26
+  - first:
+      213: -2910417285057677589
+    second: wooden-ui-2_27
+  - first:
+      213: 1072793566957176291
+    second: wooden-ui-2_28
+  - first:
+      213: 1205774248420866584
+    second: wooden-ui-2_29
+  - first:
+      213: -8878177537062183156
+    second: wooden-ui-2_30
+  - first:
+      213: 320675288617672128
+    second: wooden-ui-2_31
+  - first:
+      213: -2147999933218497179
+    second: wooden-ui-2_32
+  - first:
+      213: 6744965417654853058
+    second: wooden-ui-2_33
+  - first:
+      213: -8959117184358356879
+    second: button
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: wooden-ui-2_0
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 608
+        width: 277
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 364b9edd5703fece0800000000000000
+      internalID: -1373826078532324253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: panel
+      rect:
+        serializedVersion: 2
+        x: 331
+        y: 405
+        width: 329
+        height: 242
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a748f4db4c939ff50800000000000000
+      internalID: 6915622219956585594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wooden-ui-2_2
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 567
+        width: 277
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9f627dcc049a0dd0800000000000000
+      internalID: -2519038258853023841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wooden-ui-2_3
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 526
+        width: 277
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 148d018cb3958f260800000000000000
+      internalID: 7131548123235670081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wooden-ui-2_4
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 485
+        width: 277
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef18c5e2eabf88a60800000000000000
+      internalID: 7676662290373706238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wooden-ui-2_5
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 445
+        width: 277
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eba8c8d40b9e217c0800000000000000
+      internalID: -4101959367156528450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wooden-ui-2_6
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 404
+        width: 277
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb528a075e73d44c0800000000000000
+      internalID: -4301720610491849282
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wooden-ui-2_7
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 309
+        width: 214
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54aff83082feaea30800000000000000
+      internalID: 4245468553887611461
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wooden-ui-2_8
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 309
+        width: 188
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d2b0fed92e363c40800000000000000
+      internalID: 5491645145179796181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sign-one
+      rect:
+        serializedVersion: 2
+        x: 471
+        y: 309
+        width: 188
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f2da9b5b44479c10800000000000000
+      internalID: 2060190444995400435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wooden-ui-2_10
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 219
+        width: 59
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0dd335e422541870800000000000000
+      internalID: 8652631102503247117
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wooden-ui-2_11
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 219
+        width: 59
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5366e284236001ee0800000000000000
+      internalID: -1292526280026200523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wooden-ui-2_12
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 219
+        width: 59
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9498ca23f330b7ca0800000000000000
+      internalID: -6018212907082544823
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wooden-ui-2_13
+      rect:
+        serializedVersion: 2
+        x: 246
+        y: 219
+        width: 58
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a50cb177146301f80800000000000000
+      internalID: -8137944871859404710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wooden-ui-2_14
+      rect:
+        serializedVersion: 2
+        x: 315
+        y: 219
+        width: 59
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1930142eb1acf8460800000000000000
+      internalID: 7246232546571256721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wooden-ui-2_15
+      rect:
+        serializedVersion: 2
+        x: 385
+        y: 219
+        width: 59
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83a8b6a39126dd490800000000000000
+      internalID: -7719906325749331400
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wooden-ui-2_16
+      rect:
+        serializedVersion: 2
+        x: 456
+        y: 219
+        width: 59
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97ef614d6f2cad210800000000000000
+      internalID: 1358612602981645945
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wooden-ui-2_17
+      rect:
+        serializedVersion: 2
+        x: 526
+        y: 219
+        width: 59
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f6a83e584e665860800000000000000
+      internalID: 7518317885039093493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wooden-ui-2_18
+      rect:
+        serializedVersion: 2
+        x: 596
+        y: 219
+        width: 58
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb9520561301dfa50800000000000000
+      internalID: 6556414436855404987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wooden-ui-2_19
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 131
+        width: 63
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3760a185e3c95b110800000000000000
+      internalID: 1276097861009409651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wooden-ui-2_20
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 131
+        width: 62
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 629a8db89e8f98500800000000000000
+      internalID: 399123723956300070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wooden-ui-2_21
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 131
+        width: 63
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 870d7cf12b4dd48d0800000000000000
+      internalID: -2860396326807941000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wooden-ui-2_22
+      rect:
+        serializedVersion: 2
+        x: 245
+        y: 131
+        width: 62
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9622dcf0741604ee0800000000000000
+      internalID: -1278915336337546647
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wooden-ui-2_23
+      rect:
+        serializedVersion: 2
+        x: 314
+        y: 131
+        width: 63
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b27247a02f6e471b0800000000000000
+      internalID: -5659644904466012373
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wooden-ui-2_24
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 131
+        width: 63
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e017a586e4d52aec0800000000000000
+      internalID: -3557178164329680626
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wooden-ui-2_25
+      rect:
+        serializedVersion: 2
+        x: 454
+        y: 131
+        width: 63
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55d3cf0c4ab99dec0800000000000000
+      internalID: -3541628500035486379
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wooden-ui-2_26
+      rect:
+        serializedVersion: 2
+        x: 524
+        y: 131
+        width: 63
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd278ac10a090fb50800000000000000
+      internalID: 6624954069211968220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wooden-ui-2_27
+      rect:
+        serializedVersion: 2
+        x: 594
+        y: 131
+        width: 62
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be6faf736ee1c97d0800000000000000
+      internalID: -2910417285057677589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wooden-ui-2_28
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 45
+        width: 72
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e58ec3b01453ee00800000000000000
+      internalID: 1072793566957176291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wooden-ui-2_29
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 45
+        width: 72
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81a707c5a45cbb010800000000000000
+      internalID: 1205774248420866584
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wooden-ui-2_30
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 42
+        width: 53
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0f5e8291906ac480800000000000000
+      internalID: -8878177537062183156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wooden-ui-2_31
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 42
+        width: 57
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0cd5d4ad974437400800000000000000
+      internalID: 320675288617672128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wooden-ui-2_32
+      rect:
+        serializedVersion: 2
+        x: 325
+        y: 46
+        width: 54
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56dd2faf075c032e0800000000000000
+      internalID: -2147999933218497179
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wooden-ui-2_33
+      rect:
+        serializedVersion: 2
+        x: 385
+        y: 48
+        width: 54
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2cd9c9d9f4eea9d50800000000000000
+      internalID: 6744965417654853058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: button
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 45
+        width: 200
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 178e8356362daa380800000000000000
+      internalID: -8959117184358356879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: ef1bfcaab39b8404b9990dc3803c22e8
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
