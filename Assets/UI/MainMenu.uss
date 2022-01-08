@@ -10,3 +10,20 @@ Button {
     -unity-font-definition: url("/Assets/UI/chinese rocks rg.otf");
     color: #80391D;
 }
+
+#BackgroundTextContainer {
+    background-image: url('/Assets/Textures/wooden-ui.png#panel');
+    -unity-slice-left: 32px;
+    -unity-slice-right: 32px;
+    -unity-slice-bottom: 32px;
+    -unity-slice-top: 32px;
+    padding: 32px;
+    font-size: 24px;
+    -unity-font: url("/Assets/UI/chinese rocks rg.otf");
+    -unity-font-definition: url("/Assets/UI/chinese rocks rg.otf");
+    color: black;
+}
+
+#RootContainer {
+    padding: 16px;
+}

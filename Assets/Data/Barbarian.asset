@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f6eec015b31b404da45b8f8c48ac0e1, type: 3}
   m_Name: Barbarian
   m_EditorClassIdentifier: 
-  TypeName: TestGerman
-  CardSprite: {fileID: 21300000, guid: 716f7ee94b020c141842e1ab57c0b965, type: 3}
+  TypeName: Drag me
+  CardSprite: {fileID: 21300000, guid: 054609453b15d674b847512a7619465b, type: 3}
   FigurePrefab: {fileID: 4021120444818984404, guid: 551c2dd458b14714fac83b30d15b6c35, type: 3}
