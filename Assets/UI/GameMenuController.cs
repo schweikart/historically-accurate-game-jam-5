@@ -242,9 +242,16 @@ namespace Arminius
 
         public void OnVictory()
         {
-            ShowModal("Victory!");
             _playButton.SetEnabled(false);
             _restartButton.SetEnabled(false);
+            if (SceneManager.GetActiveScene().name == "Level2")
+            {
+                ShowModal("Thanks for playing!");
+            }
+            else
+            {
+                ShowModal("Victory!");
+            }
         }
 
         public void OnDefeat()
