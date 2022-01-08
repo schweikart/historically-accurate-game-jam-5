@@ -156,7 +156,7 @@ namespace Arminius
         private void OnSliderValueChanged(ChangeEvent<float> evt)
         {
             FindObjectOfType<ViewPrediction>().MoveRomans(evt.newValue);
-            if (evt.newValue > 95)
+            if (evt.newValue > 0.95)
             {
                 FindObjectOfType<StartAttackManager>().StartAttack();
             }

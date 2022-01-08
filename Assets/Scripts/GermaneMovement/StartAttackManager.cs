@@ -16,4 +16,9 @@ public class StartAttackManager : MonoBehaviour
         roman.GetComponent<SplineMovement>().onFinished += delegate { attackStarts(); };
     }
 
+    public void StartAttack()
+    {
+        attackStarts();
+    }
+
 }
