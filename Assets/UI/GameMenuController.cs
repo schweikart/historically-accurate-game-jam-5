@@ -51,6 +51,7 @@ namespace Arminius
         }
 
         private Button _playButton;
+        private Button _restartButton;
         private Slider _timeSlider;
         private ScrollView _germanSelectorScrollView;
         private Label _modal;
@@ -73,7 +74,8 @@ namespace Arminius
 
             _modal = rootVisualElement.Q<Label>("Modal");
 
-            rootVisualElement.Q<Button>("RestartLevelButton").RegisterCallback<ClickEvent>(OnRestartLevelButtonClick);
+            _restartButton = rootVisualElement.Q<Button>("RestartLevelButton");
+            _restartButton.RegisterCallback<ClickEvent>(OnRestartLevelButtonClick);
             rootVisualElement.Q<Button>("MainMenuButton").RegisterCallback<ClickEvent>(OnMainMenuButtonClick);
 
             _germanSelectorScrollView = rootVisualElement.Q<ScrollView>("GermanSelector");
@@ -250,6 +252,7 @@ namespace Arminius
         {
             ShowModal("Victory!");
             _playButton.SetEnabled(false);
+            _restartButton.SetEnabled(false);
         }
 
         public void OnDefeat()
