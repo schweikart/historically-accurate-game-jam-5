@@ -122,37 +122,43 @@ namespace Arminius
 
         private void OnGermanSelectorDragStart(MouseDownEvent evt, GermaneCardElement germaneCard)
         {
-            // only create new germane the stock is not empty
-            if (germaneCard.StockEntry.AmountInStock == 0) return;
-
-            evt.target.CaptureMouse();
-            _currentGermanSelectorDrag = germaneCard;
-            _dragGhost = Instantiate(germaneCard.StockEntry.Germane.FigurePrefab);
-            germaneCard.StockEntry = new GermaneStockEntry()
+            if (EditorMode)
             {
-                AmountInStock = germaneCard.StockEntry.AmountInStock - 1,
-                Germane = germaneCard.StockEntry.Germane,
-            };
+                // only create new germane the stock is not empty
+                if (germaneCard.StockEntry.AmountInStock == 0) return;
 
-            // disable ray casts on ghost
-            _dragGhostOriginalLayer = _dragGhost.layer;
-            _dragGhost.layer = 2;
+                evt.target.CaptureMouse();
+                _currentGermanSelectorDrag = germaneCard;
+                _dragGhost = Instantiate(germaneCard.StockEntry.Germane.FigurePrefab);
+                germaneCard.StockEntry = new GermaneStockEntry()
+                {
+                    AmountInStock = germaneCard.StockEntry.AmountInStock - 1,
+                    Germane = germaneCard.StockEntry.Germane,
+                };
+
+                // disable ray casts on ghost
+                _dragGhostOriginalLayer = _dragGhost.layer;
+                _dragGhost.layer = 2;
+            }
         }
 
         private void OnGermanSelectorDragStop(MouseUpEvent evt, GermaneCardElement germanSelector)
         {
-            _currentGermanSelectorDrag = null;
-            _dragGhost.layer = _dragGhostOriginalLayer;
+            if (EditorMode)
+            {
+                _currentGermanSelectorDrag = null;
+                _dragGhost.layer = _dragGhostOriginalLayer;
 
-            _dragGhost = null;
-            _dragGhostOriginalLayer = -1;
+                _dragGhost = null;
+                _dragGhostOriginalLayer = -1;
 
-            evt.target.ReleaseMouse();
+                evt.target.ReleaseMouse();
+            }
         }
 
         private void OnGermanSelectorDragMove(MouseMoveEvent evt, GermaneCardElement germanSelector)
         {
-            if (_currentGermanSelectorDrag != null)
+            if (EditorMode && _currentGermanSelectorDrag != null)
             {
                 Ray ray = gameController.GetComponent<Camera>().ScreenPointToRay(Input.mousePosition);
                 Physics.Raycast(ray, out var hit, Mathf.Infinity, LayerMask.GetMask("ground"));
