@@ -1824,7 +1824,7 @@ GameObject:
   - component: {fileID: 749361729}
   - component: {fileID: 749361728}
   - component: {fileID: 749361727}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Terrain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3538,6 +3538,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5522698919005791122, guid: ceb2637f5aa9d124a8087bcb85f371d5, type: 3}
+      propertyPath: Speed
+      value: 0.4
+      objectReference: {fileID: 0}
     - target: {fileID: 5522698919012412897, guid: ceb2637f5aa9d124a8087bcb85f371d5, type: 3}
       propertyPath: m_RootOrder
       value: 0
