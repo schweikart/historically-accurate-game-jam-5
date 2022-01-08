@@ -20,6 +20,14 @@ namespace Arminius
             get => _editorMode;
             set
             {
+                if (value == false)
+                {
+                    if(((GermaneCardElement)_germanSelectorScrollView[0]).StockEntry.AmountInStock != 0)
+                    {
+                        return;
+                    }
+                }
+
                 _editorMode = value;
                 Playing = !_editorMode;
 
