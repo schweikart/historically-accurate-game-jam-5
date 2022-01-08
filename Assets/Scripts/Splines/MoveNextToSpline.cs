@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SplineMovement : MonoBehaviour
+public class MoveNextToSpline : MonoBehaviour
 {
     public float offset;
 
@@ -87,16 +87,14 @@ public class SplineMovement : MonoBehaviour
 
                 Vector3 position = spline.GetPoint(progress);
                 Vector3 direction = spline.GetDirection(progress);
-                if (offset == 0)
-                {
-                    transform.localPosition = position;
-                } else
-                {
-                    float degrees = Mathf.Atan2(direction.z, direction.x);
-                    degrees = degrees - (float)1 / 2 * Mathf.PI;
 
-                    transform.localPosition = new Vector3(position.x + ((float)Mathf.Cos(degrees) * offset), position.y, position.z + (float)(Mathf.Sin(degrees) * offset));
-                }
+                float degrees = Mathf.Atan2(direction.z, direction.x);
+                Debug.Log(direction);
+                degrees = degrees - (float)1 / 2 * Mathf.PI;
+
+                transform.localPosition = new Vector3(position.x +((float) Mathf.Cos(degrees) * offset), position.y, position.z + (float)(Mathf.Sin(degrees) * offset)) ;
+
+
 
                 if (lookForward)
                 {

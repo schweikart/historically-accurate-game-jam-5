@@ -129,7 +129,7 @@ public class BezierSpline : MonoBehaviour {
 		}
 	}
 
-    public float GetSplineLength(float stepSize = .01f)
+    public float GetSplineLength(float stepSize = .001f)
     {
         float splineLength = 0f;
 
